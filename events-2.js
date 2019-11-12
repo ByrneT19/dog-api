@@ -1,12 +1,5 @@
 'use strict';
 
-/*function getDogs(number) {
-    fetch(`https://dog.ceo/api/breeds/image/random/${number}`)
-    .then(response => response.json())
-    .then(responseJson => showInDom(responseJson));
-    showInDom(responseJson);
-}*/
-
 function getDogs(number) {
   fetch('https://dog.ceo/api/breeds/image/random/' + `${number}`)
   .then(response => response.json())

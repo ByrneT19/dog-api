@@ -1,32 +1,25 @@
 function getDogBreed() {
-    fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
+    fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
     .then(response => response.json())
     .then(responseJson => showImage(responseJson))
     .catch(error => $(error-p).html('Sorry, we could not find your breed! Please try again!'));
 }
 
-/*function showInDom(responseJson) {
-    console.log(responseJson);
-    $('.dog-img').replaceWith(
-      `<img src="${responseJson.message}" class="dog-img">`
-    )
-    $('.dog-results').show();
-  }*/
-
-  function watchForm() {
+function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      const dogType = $(event.currentTarget).find('#dogBreed');
-        getDogs(dogType);
+      let breed = breed;
+      const dogType = $(event.currentTarget).find('#dogBreed').val();
+        getDogBreed(dogType);
     });
   }
 
-  function showImage(responseJson) {
+function showImage(responseJson) {
     console.log(responseJson);
     $('.dog-img').attr('src', `${responseJson.message}`);
   }
   
-  $(function() {
+$(function() {
     console.log('App loaded - submit a number');
     watchForm();
 })
