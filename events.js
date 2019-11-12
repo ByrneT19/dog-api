@@ -9,7 +9,7 @@ function getDogs(number) {
 function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      const number = $(event.currentTarget).find('#dogCount');
+      const number = $(event.currentTarget).find('#dogCount').val();
         getDogs(number);
     });
   }
