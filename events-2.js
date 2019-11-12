@@ -4,6 +4,7 @@ function getDogs() {
     fetch('https://dog.ceo/api/breeds/image/random/' + 'number')
     .then(response => response.json())
     .then(responseJson => console.log(responseJson));
+    showInDom();
 }
 
 function showInDom(responseJson) {
@@ -21,6 +22,12 @@ function watchForm() {
         getDogs(number);
     });
   }
+
+  /*function showImage() {
+    console.log(responseJson);
+    $('.dog-img').attr('src', `${responseJson.message}`);
+    $('.dog-results').show();
+  }*/
   
   $(function() {
       console.log('App loaded - submit a number');
