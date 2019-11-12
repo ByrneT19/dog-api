@@ -4,7 +4,7 @@ function getDogs() {
     fetch('https://dog.ceo/api/breeds/image/random/' + 'number')
     .then(response => response.json())
     .then(responseJson => showImage(responseJson));
-    showImage();
+    showImage(responseJson);
 }
 
 /*function showInDom(responseJson) {
@@ -23,7 +23,7 @@ function watchForm() {
     });
   }
 
-  function showImage() {
+  function showImage(responseJson) {
     console.log(responseJson);
     $('.dog-img').attr('src', `${responseJson.message}`);
     $('.dog-results').show();
