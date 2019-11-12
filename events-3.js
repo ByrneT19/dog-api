@@ -1,8 +1,8 @@
 function getDogBreed() {
-    fetch('https://dog.ceo/api/breed/`${value:""}`/images/random');
+    fetch(`https://dog.ceo/api/breed/${value:""}/images/random`);
     .then(response => response.json())
     .then(responseJson => showImage(responseJson))
-    .catch(error => alert('Something went wrong. Try again later.'));
+    .catch(error => $(error-p).html('Sorry, we could not find your breed! Please try again!'));
 }
 
 /*function showInDom(responseJson) {
