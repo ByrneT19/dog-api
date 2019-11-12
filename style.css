@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+.dog-form {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.next-ex {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.dog-results {
+    display: none;
+}
