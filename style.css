@@ -14,10 +14,13 @@
 }
 
 .dog-results {
-    display: none;
     margin-top: 20px;
 }
 
 .error {
     display: none;
+}
+
+.error-p {
+    font-size: 30px;
 }

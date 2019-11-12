@@ -13,22 +13,16 @@ function getDogs(number) {
   .then(responseJson =>  showInDom(responseJson));
 }
 
-/*function showInDom(responseJson) {
-    console.log(responseJson);
-    $('.dog-img').replaceWith(
-      `<img src="${responseJson.message}" class="dog-img">`
-    )
-    $('.dog-results').show();
-  }*/
-  
-  function showInDom(responseJson) {   
-    getDogs();
-    $('.dog-img, src').empty;
-    image = message;
-    for(message = 0; message < responseJson.length; message++);
-    $('.dog-img').append('message');
-      $('.dog-results').show();
-    }
+function showInDom(responseJson) {
+  //getDogs();
+  $('.dog-results').empty();
+  //image = message;
+  let result = "";
+  for(let i = 0; i < responseJson.message.length; i++) {
+    result += `<img src="${responseJson.message[i]}" class="dog-img" >`;
+   }
+   $('.dog-results').append(result);
+  }
   
 
 function watchForm() {
@@ -38,12 +32,6 @@ function watchForm() {
         getDogs(number);
     });
   }
-
-  /*function showImage(responseJson) {
-    console.log(responseJson);
-    $('.dog-img').attr('src', `${responseJson.message}`);
-    $('.dog-results').show();
-  }*/
   
   $(function() {
       console.log('App loaded - submit a number');
