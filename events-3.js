@@ -1,5 +1,5 @@
 function getDogBreed() {
-    fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+    fetch(`https://dog.ceo/api/breed/${'#dogBreed'}/images/random`)
     .then(response => response.json())
     .then(responseJson => showImage(responseJson))
     .catch(error => $(error-p).html('Sorry, we could not find your breed! Please try again!'));
@@ -8,7 +8,6 @@ function getDogBreed() {
 function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      let breed = breed;
       const dogType = $(event.currentTarget).find('#dogBreed').val();
         getDogBreed(dogType);
     });
