@@ -17,6 +17,10 @@
     margin-top: 20px;
 }
 
+.dog-img {
+    display: none;
+}
+
 .error {
     display: none;
 }
