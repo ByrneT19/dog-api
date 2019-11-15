@@ -1,8 +1,8 @@
 function getDogBreed(breed) {
-    fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
-    .then(response => response.json())
-    .then(responseJson => showImage(responseJson))
-    .catch(error => alert('Something went wrong. Try again later.'));
+  fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+  .then(response => response.json())
+  .then(responseJson => showImage(responseJson)) 
+  .catch(error => alert('Something went wrong. Try again later.').empty('.dog-img'));
 }
 
 function watchForm() {
