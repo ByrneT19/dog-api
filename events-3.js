@@ -8,7 +8,6 @@ function getDogBreed(breed) {
 function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      
       const breed = $('#dogBreed').val();
         getDogBreed(breed);
     });
@@ -21,6 +20,6 @@ function showImage(responseJson) {
   }
   
 $(function() {
-    console.log('App loaded - submit a number');
+    console.log('App loaded - submit a breed');
     watchForm();
 })
