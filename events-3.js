@@ -1,5 +1,5 @@
-function getDogBreed() {
-    fetch(`https://dog.ceo/api/breed/hound/images/random`)
+function getDogBreed(breed) {
+    fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
     .then(response => response.json())
     .then(responseJson => showImage(responseJson))
     .catch(error => alert('Something went wrong. Try again later.'));
@@ -9,8 +9,8 @@ function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
       
-      const dogType = $(event.currentTarget).find('#dogBreed').val();
-        getDogBreed(dogType);
+      const breed = $('#dogBreed').val();
+        getDogBreed(breed);
     });
   }
 
