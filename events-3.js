@@ -1,8 +1,8 @@
 function getDogBreed(breed) {
   fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
-  .then(response => response.json())
+  .then(response => response.json ())
   .then(responseJson => showImage(responseJson)) 
-  .catch(error => alert('Something went wrong. Try again later.').empty('.dog-img'));
+  .catch(error => alert('Something went wrong. Try again later.'));
 }
 
 function watchForm() {
@@ -23,3 +23,7 @@ $(function() {
     console.log('App loaded - submit a breed');
     watchForm();
 })
+
+//if status === success showImage
+//else alert
+
