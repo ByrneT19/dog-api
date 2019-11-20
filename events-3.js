@@ -1,9 +1,15 @@
-function getDogBreed(breed) {
-  fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
-  .then(response => response.json ())
-  .then(responseJson => showImage(responseJson)) 
-  .catch(error => alert('Something went wrong. Try again later.'));
+ function getDogBreed(breed) {
+   $('.dog-img').hide();
+   fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+    .then (response => {
+      if(!response.ok) {
+        throw new Error(alert('Something went wrong. Try again later'))
+      }
+  response.json().then(responseJson => showImage(responseJson)) //<- only runs if response is ok
+  })
 }
+
+// go on to next block if res ok, if not will go to catch block
 
 function watchForm() {
     $('form').submit(event => {
@@ -27,3 +33,11 @@ $(function() {
 //if status === success showImage
 //else alert
 
+/*.then (response => {
+  if(!response.ok) {
+    throw new Error('Something went wrong. Try again later')
+  }
+  response.json() <- only runs if response is ok
+}) 
+
+// go on to next block if res ok, if not will go to catch block*/
