@@ -9,8 +9,6 @@
   })
 }
 
-// go on to next block if res ok, if not will go to catch block
-
 function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
@@ -30,14 +28,3 @@ $(function() {
     watchForm();
 })
 
-//if status === success showImage
-//else alert
-
-/*.then (response => {
-  if(!response.ok) {
-    throw new Error('Something went wrong. Try again later')
-  }
-  response.json() <- only runs if response is ok
-}) 
-
-// go on to next block if res ok, if not will go to catch block*/
