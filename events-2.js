@@ -15,6 +15,7 @@ function showInDom(responseJson) {
     result += `<img src="${responseJson.message[i]}" class="dog-img" >`;
    }
    $('.dog-results').append(result);
+   $('.dog-img').show();
   }
   
 
